@@ -1,0 +1,90 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <span style="margin:auto"> Maker-checker</span>
+
+  </mat-toolbar-row>
+     </mat-toolbar>
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+      <mat-card-title>Create a New Request</mat-card-title>
+<form [formGroup]="customerForm">
+    <div class="row" style="width:80%;margin:2px;">
+              <mat-form-field class="column">
+                  <input matInput placeholder="Customer Id" formControlName="customerId" >
+                  <mat-error *ngIf="customerForm.get('customerId').hasError('maxlength')">
+                      Customer ID length cannot be more than 8
+                    </mat-error>
+                    <mat-error *ngIf="customerForm.get('customerId').hasError('required')">
+                      Customer ID is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+
+              <mat-form-field class="columnR">
+                  <input matInput pattern="" placeholder="Customer Name" formControlName="customerName" >
+                  <mat-error *ngIf="customerForm.get('customerName').hasError('pattern')">
+                      Name contains only alphabets
+                    </mat-error>
+                    <mat-error *ngIf="customerForm.get('customerName').hasError('required')">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="row" style="width:80%;margin:2px;">
+                  <mat-form-field class="column">
+                      <input matInput placeholder="Customer Phone" formControlName="customerPhone" >
+
+                    </mat-form-field>
+
+
+                  <mat-form-field class="columnR">
+                      <input matInput placeholder="Customer email" formControlName="customerEmail">
+                      <mat-error *ngIf="customerForm.get('customerEmail').hasError('email')">
+                          Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="customerForm.get('customerEmail').hasError('required')">
+                          Email is <strong>required</strong>
+                        </mat-error>
+                        <!-- <mat-error *ngIf="customerForm.get('email').invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+                  </div>
+                  <div class="row" style="width:80%;margin:2px;">
+                      <mat-form-field class="column">
+                          <input matInput placeholder="Loan Type" formControlName="loanType" >
+
+                        </mat-form-field>
+
+
+                      <mat-form-field class="columnR">
+                          <input matInput placeholder="Loan Ammount" formControlName="loanAmount" >
+
+                        </mat-form-field>
+                      </div>
+                      <div class="row" style="width:80%;margin:2px;">
+                          <mat-form-field class="column">
+                              <input matInput placeholder="Customer Score" formControlName="customerScore" >
+
+                            </mat-form-field>
+
+
+                          <mat-form-field class="columnR">
+                              <input matInput placeholder="Loan Tenure" formControlName="loanTenure" >
+
+                            </mat-form-field>
+                          </div>
+                          <div class="row" style="width:80%;margin:2px;">
+                              <mat-form-field style="width:80%;margin:10px;">
+                                  <input matInput placeholder="Customer Address" formControlName="cutomerAddres" >
+
+                                </mat-form-field>
+                              </div>
+                              <br>
+
+    <br>                          <div class="row" style="width:99%;display: block; margin: 0 auto;">
+                              <button  style="margin:15px;" mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+                              <button style="margin:20px;"  mat-flat-button color="primary" (click)="onReset()">Reset</button>
+                              <button   mat-flat-button color="primary" (click)="onCancel()">Cancel</button>
+                              </div>
+                            </form>
+                          </mat-card>
+                        </section>

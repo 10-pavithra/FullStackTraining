@@ -1,0 +1,58 @@
+mat-tab-label {
+  min-width: 25px !important;
+  padding: 5px;
+  background-color: transparent;
+  font-weight: 700;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  min-width: 25px !important;
+  padding: 5px;
+  font-weight: 700;
+}
+.mat-ink-bar {
+  background-color: green;
+}
+p {
+  font-family: Lato;
+}
+
+table {
+  width: 100%;
+}
+
+.header {
+  padding: 1px;
+}
+
+
+.mat-tab-body-content {
+
+  overflow: none;
+}
+.column {
+  float: left;
+  width: 40%;
+  padding: 3px;
+  margin:10px
+}
+.columnR {
+  float: right;
+  width: 40%;
+  margin:10px
+}
+
+.columnB {
+  float: center;
+  width: 10%;
+  padding: 3px;
+  margin:10px;
+}
+.columnBR {
+  float: center;
+  width: 10%;
+  padding: 3px;
+  margin:10px;
+}
+
